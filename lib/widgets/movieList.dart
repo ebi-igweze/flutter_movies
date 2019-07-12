@@ -12,7 +12,7 @@ class MovieList extends StatefulWidget {
 
 class MovieListState extends State<MovieList> {
   final Color mainColor = const Color(0xff3C3261);
-  Map movies;
+  var movies;
   
   final MoviesService service;
   MovieListState({this.service}) {

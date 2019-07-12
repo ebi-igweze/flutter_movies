@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MovieCell extends StatelessWidget {
-  final Map movies;
+  final movies;
   final int index;
   final String imageUrl = 'https://image.tmdb.org/t/p/w500/';
   final Color mainColor = const Color(0xff3C3261);
