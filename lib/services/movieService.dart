@@ -14,7 +14,16 @@ class MoviesService {
 
     
     final url = 'http://api.themoviedb.org/3/discover/movie?api_key=${secret.apiKey}';
-    var response = await http.get(url);
+    var promise = http.get(url);
+
+    // handle error situations
+    promise.catchError((error) {
+      // print error to console
+      print(error);
+    });
+
+
+    var response = await promise;
     return json.decode(response.body);
   }
 }

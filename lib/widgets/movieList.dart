@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_movies/widgets/movieTitle.dart';
 import 'package:flutter_movies/widgets/movieCell.dart';
+import 'package:flutter_movies/widgets/movieDetail.dart';
 import 'package:flutter_movies/services/movieService.dart';
+import 'package:flutter_movies/utils.dart';
+
 
 class MovieList extends StatefulWidget {
   final service = new MoviesService();
@@ -11,9 +14,8 @@ class MovieList extends StatefulWidget {
 }
 
 class MovieListState extends State<MovieList> {
-  final Color mainColor = const Color(0xff3C3261);
   var movies;
-  
+
   final MoviesService service;
   MovieListState({this.service}) {
     // retrieve data
@@ -30,7 +32,6 @@ class MovieListState extends State<MovieList> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -55,10 +56,18 @@ class MovieListState extends State<MovieList> {
                   itemCount: movies != null ? movies.length : 0,
                   itemBuilder: (context, i) {
                     return FlatButton(
-                        child: MovieCell(movies: movies, index: i),
-                        padding: const EdgeInsets.all(0.0),
-                        color: Colors.white,
-                        onPressed: () {},);
+                      child: MovieCell(movies: movies, index: i),
+                      padding: const EdgeInsets.all(0.0),
+                      color: Colors.white,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return MovieDetail(movie: movies[i]);
+                          }),
+                        );
+                      },
+                    );
                   },
                 ),
               ),

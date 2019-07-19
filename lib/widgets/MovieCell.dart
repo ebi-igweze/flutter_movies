@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_movies/utils.dart';
+
 
 class MovieCell extends StatelessWidget {
   final movies;
   final int index;
-  final String imageUrl = 'https://image.tmdb.org/t/p/w500/';
-  final Color mainColor = const Color(0xff3C3261);
 
   MovieCell({this.movies, this.index});
 
@@ -45,7 +45,7 @@ class MovieCell extends StatelessWidget {
                       movies[index]['title'],
                       style: TextStyle(
                           fontSize: 20.0,
-                          fontFamily: 'Arvo',
+                          fontFamily: fontFamily,
                           fontWeight: FontWeight.bold),
                     ),
 
@@ -55,7 +55,7 @@ class MovieCell extends StatelessWidget {
                       maxLines: 3,
                       style: TextStyle(
                         color: const Color(0xff8785A4),
-                        fontFamily: 'Arvo'
+                        fontFamily: fontFamily,
                       ),
                     ),
                   ],

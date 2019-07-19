@@ -20,3 +20,11 @@ class SecretLoader {
     return rootBundle.loadStructuredData<Secret>(path, parser);
   }
 }
+
+
+// is it a number
+//   yes - 
+//        does it fall between the current year and max year
+//             yes - return true number is valid
+//             no - return false number is valid
+//   no - return number is not valid
