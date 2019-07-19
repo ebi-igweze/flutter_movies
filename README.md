@@ -1,10 +1,8 @@
 # flutter_movies
 
-A new Flutter project.
 
-## Getting Started
+## Flutter Movies
 
-This project is a starting point for a Flutter application.
+This project is a test bed for the flutter framework, testing out the hybrid features using the OMDB api. 
 
-A few resources to get you started if this is your first Flutter project:
 
